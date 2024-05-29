@@ -3,5 +3,4 @@ project(tutorial)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(tutorial main.cpp
-        src/HelloWorld.cpp)
+add_executable(tutorial main.cpp)
