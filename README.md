@@ -3,7 +3,7 @@ My way of learning C++
 ...once again...  
 
 Tutorial i'm learning from: [C++ for Java Programmers by Mary Elaine Califf](https://www.youtube.com/watch?v=ZzaPdXTrSb8&)  
-I already *cough* know *cough* Java, so this tutorial will (mostly) show the differences of C++ compared to Java
+I already *\*cough\** know *\*cough\** Java, so this tutorial will (mostly) show the differences of C++ compared to Java
 
 # Hello World
 ```c++  
@@ -47,3 +47,61 @@ Everything other is ***true***
 
 Keyword for constant is **const** rather than final  
 Value has to be assigned to constant when declared, it cannot be changed afterwards  
+
+# Functions
+Functions can exist outside classes  
+
+Order matters - you have to declare the function before using it  
+By typing `#include <iostream>` you are putting all functions of *iostream* to your program  
+
+### Example
+#### Error
+We tried to run *calculate()* before it was declared  
+```c++
+#include <iostream>
+
+int main() {
+    int result = calculate(5);
+    std::cout << result << std::endl;
+}
+
+double calculate(double number) {
+    return number * 2;
+}
+```
+
+#### Fix #1
+We moved *calculate()* before *main()*
+```c++
+#include <iostream>
+
+double calculate(double number) {
+    return number * 2;
+}
+
+int main() {
+    int result = calculate(5);
+    std::cout << result << std::endl;
+}
+```
+
+#### Fix #2 - function prototype
+It is recommended to use this way
+```c++
+#include <iostream>
+
+double calculate(double number);
+
+int main() {
+    int result = calculate(5);
+    std::cout << result << std::endl;
+}
+
+double calculate(double number) {
+    return number * 2;
+}
+```
+
+# Parameters 
+## Pass by value
+Default way, 
