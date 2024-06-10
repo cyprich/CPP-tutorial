@@ -103,5 +103,24 @@ double calculate(double number) {
 ```
 
 # Parameters 
-## Pass by value
-Default way, 
+## Types
+### Pass by value
+`void func(int param){...}`  
+Default way, such as in Java  
+We pass parameter to function, it gets converted to local variable and changes **won't be reflected** to the original variable  
+
+### Pass by reference
+`void func(int& param){...}`  
+Any changes made to the parameters **will get reflected** to the original variable  
+
+Pass by reference usually uses less memory *(?)*  
+However, if you don't want the variable to be modified, you can include *const* before the parameter  
+`void func(const int& param){...}`  
+
+## Default arguments
+`void func(int minAge = 18){...}`  
+If you don't provide value when calling *func()*, it will make it 18 by default  
+Default argument(s) has to be the last (all the way on the right side)  
+If you are using prototype, you can specify the default value just once, either in prototype *(preferred)* or in normal function declaration  
+
+
