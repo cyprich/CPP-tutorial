@@ -2,8 +2,9 @@
 
 int main() {
     int a = 2;
-    char &b = a;
-        
+    int b = 3;
+    int &c = a;
+    &c = a;
 
     return 0;
-}  
+}
